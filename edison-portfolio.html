@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edison Flores-DeWilde — Mechanical Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #f8f7f5;
+      --ink:         #181815;
+      --muted:       #9a9a90;
+      --accent:      #2d6a4f;
+      --accent-mid:  #40916c;
+      --accent-lite: #74c69d;
+      --border:      #e5e4e0;
+      --card:        #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 300;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ── Custom Cursor ───────────────────────── */
+    #cursor {
+      position: fixed;
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width .2s, height .2s, opacity .2s;
+    }
+    #cursor-ring {
+      position: fixed;
+      width: 32px; height: 32px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width .3s, height .3s, opacity .3s;
+      opacity: 0.45;
+    }
+    body:not(:hover) #cursor,
+    body:not(:hover) #cursor-ring { opacity: 0; }
+
+    /* ── Nav ─────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 28px 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      mix-blend-mode: multiply;
+    }
+    .nav-logo {
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width .3s ease;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── Hero ────────────────────────────────── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    #particles {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%; height: 100%;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 52px;
+    }
+    .hero-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 10px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp .8s ease .3s forwards;
+    }
+    .hero-label::before {
+      content: '';
+      display: block;
+      width: 36px; height: 1px;
+      background: var(--accent);
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(68px, 10.5vw, 132px);
+      line-height: .93;
+      letter-spacing: -.025em;
+      opacity: 0;
+      animation: fadeUp .9s ease .5s forwards;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      margin-top: 36px;
+      font-size: 11px;
+      letter-spacing: .1em;
+      line-height: 2;
+      color: var(--muted);
+      max-width: 400px;
+      opacity: 0;
+      animation: fadeUp .9s ease .7s forwards;
+    }
+    .scroll-hint {
+      position: absolute;
+      bottom: 44px; left: 52px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      animation: fadeUp .8s ease 1.1s forwards;
+      text-decoration: none;
+    }
+    .scroll-hint span {
+      font-size: 9px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      writing-mode: vertical-rl;
+    }
+    .scroll-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { transform: scaleY(1); opacity: 1; }
+      50%      { transform: scaleY(.55); opacity: .3; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Projects ────────────────────────────── */
+    #projects {
+      padding: 120px 52px 100px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 64px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(38px, 5vw, 58px);
+      letter-spacing: -.02em;
+    }
+    .section-meta {
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .project-card {
+      background: var(--card);
+      padding: 44px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: background .25s;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 0;
+      background: var(--accent);
+      transition: height .4s ease;
+    }
+    .project-card:hover { background: #fafaf8; }
+    .project-card:hover::before { height: 100%; }
+    .project-num {
+      font-size: 10px;
+      letter-spacing: .22em;
+      color: var(--accent);
+      margin-bottom: 22px;
+      display: block;
+    }
+    .project-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      transition: color .2s;
+    }
+    .project-card:hover .project-title { color: var(--accent); }
+    .project-desc {
+      font-size: 10.5px;
+      line-height: 2;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .tag {
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: border-color .25s, color .25s;
+    }
+    .project-card:hover .tag {
+      border-color: var(--accent-lite);
+      color: var(--accent);
+    }
+
+    /* ── About Strip ─────────────────────────── */
+    #about {
+      background: var(--ink);
+      padding: 88px 52px;
+      display: flex;
+      gap: 72px;
+      align-items: flex-start;
+    }
+    .about-eyebrow {
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--accent-lite);
+      padding-top: 6px;
+      white-space: nowrap;
+    }
+    .about-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3.2vw, 38px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.55;
+      color: #f0ede8;
+      max-width: 680px;
+    }
+    .about-quote strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--accent-lite);
+    }
+
+    /* ── Footer ──────────────────────────────── */
+    footer {
+      padding: 48px 52px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy {
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: var(--muted);
+    }
+
+    /* ── Responsive ──────────────────────────── */
+    @media (max-width: 680px) {
+      nav, .hero-content, .scroll-hint,
+      #projects, #about, footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .section-header { flex-direction: column; gap: 8px; }
+      #about { flex-direction: column; gap: 20px; }
+      footer { flex-direction: column; gap: 20px; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Nav -->
+  <nav>
+    <span class="nav-logo">EFD</span>
+    <ul class="nav-links">
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="mailto:edison@example.com">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <canvas id="particles"></canvas>
+    <div class="hero-content">
+      <div class="hero-label">Mechanical Engineer</div>
+      <h1>Edison<br><em>Flores-</em><br>DeWilde</h1>
+      <p class="hero-sub">Designing systems that endure — from first principles to final form. Precision engineering for the world that comes next.</p>
+    </div>
+    <a class="scroll-hint" href="#projects" aria-label="Scroll to projects">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="section-header">
+      <h2 class="section-title">Selected Work</h2>
+      <span class="section-meta">04 Projects</span>
+    </div>
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <span class="project-num">— 01</span>
+        <h3 class="project-title">Thermal Regulation System</h3>
+        <p class="project-desc">Designed a passive cooling architecture for a high-density electronics enclosure, reducing peak temperatures by 22 °C without active components or moving parts.</p>
+        <div class="project-tags">
+          <span class="tag">Thermodynamics</span>
+          <span class="tag">CFD</span>
+          <span class="tag">SolidWorks</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-num">— 02</span>
+        <h3 class="project-title">Lightweight Suspension Linkage</h3>
+        <p class="project-desc">Topologically optimized a double-wishbone suspension arm using FEA, achieving a 34% weight reduction while maintaining full structural integrity under dynamic loads.</p>
+        <div class="project-tags">
+          <span class="tag">FEA</span>
+          <span class="tag">ANSYS</span>
+          <span class="tag">Topology Opt.</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-num">— 03</span>
+        <h3 class="project-title">Microfluidic Pump Assembly</h3>
+        <p class="project-desc">Developed a peristaltic micropump for lab-on-chip applications, enabling sub-microliter precision flow control at pressures up to 15 kPa with negligible dead volume.</p>
+        <div class="project-tags">
+          <span class="tag">Microfluidics</span>
+          <span class="tag">Mechatronics</span>
+          <span class="tag">MEMS</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-num">— 04</span>
+        <h3 class="project-title">Tensegrity Habitat Structure</h3>
+        <p class="project-desc">Explored deployable tensegrity frameworks for off-world habitat construction, modeling structural behavior under Martian gravity and regolith anchoring conditions.</p>
+        <div class="project-tags">
+          <span class="tag">Structural</span>
+          <span class="tag">Space Systems</span>
+          <span class="tag">MATLAB</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <div id="about">
+    <span class="about-eyebrow">About</span>
+    <p class="about-quote">
+      I build things that have to <strong>work</strong> — no excuses, no approximations.
+      Engineering is the discipline of turning hard constraints into elegant, lasting solutions.
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <ul class="footer-links">
+      <li><a href="mailto:edison@example.com">Email</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">GitHub</a></li>
+      <li><a href="#">Resume</a></li>
+    </ul>
+    <span class="footer-copy">© 2025 Edison Flores-DeWilde</span>
+  </footer>
+
+  <script>
+    /* ── Custom Cursor ─────────────────────────────────────────── */
+    const cur  = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx = -200, my = -200, rx = -200, ry = -200;
+
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+    (function animCursor() {
+      rx += (mx - rx) * 0.13;
+      ry += (my - ry) * 0.13;
+      cur.style.left  = mx + 'px';
+      cur.style.top   = my + 'px';
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(animCursor);
+    })();
+
+    const hoverEls = document.querySelectorAll('a, .project-card, button');
+    hoverEls.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        ring.style.width  = '54px';
+        ring.style.height = '54px';
+        ring.style.opacity = '.2';
+      });
+      el.addEventListener('mouseleave', () => {
+        ring.style.width  = '32px';
+        ring.style.height = '32px';
+        ring.style.opacity = '.45';
+      });
+    });
+
+    /* ── Particle Canvas ───────────────────────────────────────── */
+    const canvas = document.getElementById('particles');
+    const ctx    = canvas.getContext('2d');
+    const COUNT  = 55;
+    const RADIUS = 125;
+    let W, H;
+    const mouse = { x: -999, y: -999 };
+    const pts   = [];
+
+    function resize() {
+      W = canvas.width  = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    document.addEventListener('mousemove', e => {
+      const r = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
+    });
+
+    function Particle() {
+      this.x  = Math.random() * W;
+      this.y  = Math.random() * H;
+      this.vx = (Math.random() - .5) * .45;
+      this.vy = (Math.random() - .5) * .45;
+      this.r  = Math.random() * 1.8 + .8;
+    }
+
+    Particle.prototype.update = function() {
+      // Mouse attraction
+      const dx = mouse.x - this.x;
+      const dy = mouse.y - this.y;
+      const d  = Math.sqrt(dx * dx + dy * dy);
+      if (d < 200 && d > 0) {
+        const f = (200 - d) / 200 * .012;
+        this.vx += dx * f;
+        this.vy += dy * f;
+      }
+      this.vx *= .97;
+      this.vy *= .97;
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < -8)  this.x = W + 8;
+      if (this.x > W+8) this.x = -8;
+      if (this.y < -8)  this.y = H + 8;
+      if (this.y > H+8) this.y = -8;
+    };
+
+    Particle.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(45,106,79,.38)';
+      ctx.fill();
+    };
+
+    for (let i = 0; i < COUNT; i++) pts.push(new Particle());
+
+    function drawEdges() {
+      for (let i = 0; i < pts.length; i++) {
+        for (let j = i + 1; j < pts.length; j++) {
+          const dx = pts[i].x - pts[j].x;
+          const dy = pts[i].y - pts[j].y;
+          const d  = Math.sqrt(dx * dx + dy * dy);
+          if (d < RADIUS) {
+            const a = (1 - d / RADIUS) * .18;
+            ctx.beginPath();
+            ctx.moveTo(pts[i].x, pts[i].y);
+            ctx.lineTo(pts[j].x, pts[j].y);
+            ctx.strokeStyle = `rgba(45,106,79,${a})`;
+            ctx.lineWidth   = .7;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    (function loop() {
+      ctx.clearRect(0, 0, W, H);
+      pts.forEach(p => { p.update(); p.draw(); });
+      drawEdges();
+      requestAnimationFrame(loop);
+    })();
+  </script>
+</body>
+</html>
