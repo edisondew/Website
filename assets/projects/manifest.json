@@ -1,0 +1,107 @@
+{
+  "a48eafcf-8eb0-4623-a310-38ee010a13ed": {
+    "title": "Accumulator Substack Assembly",
+    "slug": "accumulator-substack-assembly",
+    "images": [
+      "assets/projects/accumulator-substack-assembly/00.jpg",
+      "assets/projects/accumulator-substack-assembly/01.jpg",
+      "assets/projects/accumulator-substack-assembly/02.jpg"
+    ]
+  },
+  "f8354fe5-fb10-487d-ac94-129ee6490501": {
+    "title": "Carbon Fiber Layups + Bodywork Fitting",
+    "slug": "carbon-fiber-layups-bodywork-fitting",
+    "images": [
+      "assets/projects/carbon-fiber-layups-bodywork-fitting/00.jpg",
+      "assets/projects/carbon-fiber-layups-bodywork-fitting/01.png",
+      "assets/projects/carbon-fiber-layups-bodywork-fitting/02.jpg"
+    ]
+  },
+  "e64a707a-5e17-40e2-b741-9291c2ad863d": {
+    "title": "Chassis Tabs + Finite Element Analysis (FEA)",
+    "slug": "chassis-tabs-finite-element-analysis-fea",
+    "images": [
+      "assets/projects/chassis-tabs-finite-element-analysis-fea/00.jpg",
+      "assets/projects/chassis-tabs-finite-element-analysis-fea/01.jpg"
+    ]
+  },
+  "56792af9-ccb1-4af5-8ec5-83208dd72245": {
+    "title": "PCM Enclosure",
+    "slug": "pcm-enclosure",
+    "images": [
+      "assets/projects/pcm-enclosure/00.jpg",
+      "assets/projects/pcm-enclosure/01.png",
+      "assets/projects/pcm-enclosure/02.png"
+    ]
+  },
+  "319d03bc-4dc4-425c-9a0e-de3e6ef71650": {
+    "title": "REVX Chassis (FSAE)  + ANSYS Structural Analysis",
+    "slug": "revx-chassis-fsae-ansys-structural-analysis",
+    "images": [
+      "assets/projects/revx-chassis-fsae-ansys-structural-analysis/00.png",
+      "assets/projects/revx-chassis-fsae-ansys-structural-analysis/01.jpg",
+      "assets/projects/revx-chassis-fsae-ansys-structural-analysis/02.jpg",
+      "assets/projects/revx-chassis-fsae-ansys-structural-analysis/03.png"
+    ]
+  },
+  "15b7912b-590c-8066-8f99-eeef67a0bef0": {
+    "title": "REVX Jigging and Tabs",
+    "slug": "revx-jigging-and-tabs",
+    "images": [
+      "assets/projects/revx-jigging-and-tabs/00.png",
+      "assets/projects/revx-jigging-and-tabs/01.png"
+    ]
+  },
+  "2467912b-590c-804c-90aa-cf33005f328e": {
+    "title": "SpaceX - Starlink",
+    "slug": "spacex-starlink",
+    "images": [
+      "assets/projects/spacex-starlink/00.svg",
+      "assets/projects/spacex-starlink/01.jpg"
+    ]
+  },
+  "0b4c8d52-bb31-415f-9f45-e555d7529c40": {
+    "title": "Spiral Zipper Manipulation/Mounting - NASA LuSTR Project (ModLab)",
+    "slug": "spiral-zipper-manipulation-mounting-nasa-lustr-p",
+    "images": [
+      "assets/projects/spiral-zipper-manipulation-mounting-nasa-lustr-p/00.jpg",
+      "assets/projects/spiral-zipper-manipulation-mounting-nasa-lustr-p/01.png",
+      "assets/projects/spiral-zipper-manipulation-mounting-nasa-lustr-p/02.png",
+      "assets/projects/spiral-zipper-manipulation-mounting-nasa-lustr-p/03.png"
+    ]
+  },
+  "e1ababf9-b6a3-495a-9b46-ec0a15487c79": {
+    "title": "Stirling Engine - MEAM 2010 Project",
+    "slug": "stirling-engine-meam-2010-project",
+    "images": [
+      "assets/projects/stirling-engine-meam-2010-project/00.jpg",
+      "assets/projects/stirling-engine-meam-2010-project/01.jpg",
+      "assets/projects/stirling-engine-meam-2010-project/02.jpg",
+      "assets/projects/stirling-engine-meam-2010-project/03.jpg"
+    ]
+  },
+  "3847912b-590c-802d-9169-f5712b0d896c": {
+    "title": "Vast - Haven-2 Solar",
+    "slug": "vast-haven-2-solar",
+    "images": [
+      "assets/projects/vast-haven-2-solar/00.png",
+      "assets/projects/vast-haven-2-solar/01.avif"
+    ]
+  },
+  "ff7a98c1-fbc8-4a87-93ee-6182d05749bf": {
+    "title": "“Bionic Arm” - Capstone Engineering Project",
+    "slug": "bionic-arm-capstone-engineering-project",
+    "images": [
+      "assets/projects/bionic-arm-capstone-engineering-project/00.jpg",
+      "assets/projects/bionic-arm-capstone-engineering-project/01.jpg"
+    ]
+  },
+  "31fa69a6-b247-408a-a492-176dd5dedbcf": {
+    "title": "“SmartLocker” - ESE 1100 Project",
+    "slug": "smartlocker-ese-1100-project",
+    "images": [
+      "assets/projects/smartlocker-ese-1100-project/00.jpg",
+      "assets/projects/smartlocker-ese-1100-project/01.jpg"
+    ]
+  }
+}
