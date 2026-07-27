@@ -42,7 +42,6 @@ window.PROJECT_DATA = [
       "assets/projects/vast-haven-2-solar/01.jpg",
       "assets/projects/vast-haven-2-solar/00.png"
     ],
-    link: "https://edison-engineering-portfolio.notion.site/Vast-Haven-2-Solar-3847912b590c802d9169f5712b0d896c"
   },
   {
     id: "spacex-starlink",
@@ -73,7 +72,6 @@ window.PROJECT_DATA = [
       "assets/projects/spacex-starlink/00.jpg",
       "assets/projects/spacex-starlink/01.jpg"
     ],
-    link: "https://edison-engineering-portfolio.notion.site/SpaceX-Starlink-2467912b590c804c90aacf33005f328e"
   },
 
   {
@@ -142,7 +140,6 @@ window.PROJECT_DATA = [
       "assets/projects/revx-jigging-and-tabs/00.png",
       "assets/projects/revx-jigging-and-tabs/01.png"
     ],
-    link: "https://edison-engineering-portfolio.notion.site/REVX-Chassis-FSAE-ANSYS-Structural-Analysis-319d03bc4dc4425c9a0ede3e6ef71650"
   },
   {
     id: "pcm-enclosure",
@@ -175,7 +172,6 @@ window.PROJECT_DATA = [
       "assets/projects/pcm-enclosure/02.png",
       "assets/projects/pcm-enclosure/00.jpg"
     ],
-    link: "https://edison-engineering-portfolio.notion.site/PCM-Enclosure-56792af9ccb14af58ec583208dd72245"
   },
 
   {
@@ -237,7 +233,6 @@ window.PROJECT_DATA = [
       "assets/projects/spiral-zipper-manipulation-mounting-nasa-lustr-p/01.png",
       "assets/projects/spiral-zipper-manipulation-mounting-nasa-lustr-p/03.png"
     ],
-    link: "https://edison-engineering-portfolio.notion.site/Spiral-Zipper-Manipulation-Mounting-NASA-LuSTR-Project-ModLab-0b4c8d52bb31415f9f45e555d7529c40"
   },
   {
     id: "stirling-engine",
@@ -271,7 +266,6 @@ window.PROJECT_DATA = [
       "assets/projects/stirling-engine-meam-2010-project/00.jpg",
       "assets/projects/stirling-engine-meam-2010-project/02.jpg"
     ],
-    link: "https://edison-engineering-portfolio.notion.site/Stirling-Engine-MEAM-2010-Project-e1ababf9b6a3495a9b46ec0a15487c79"
   },
   {
     id: "carbon-fiber",
@@ -303,6 +297,5 @@ window.PROJECT_DATA = [
       "assets/projects/carbon-fiber-layups-bodywork-fitting/02.jpg",
       "assets/projects/carbon-fiber-layups-bodywork-fitting/01.png"
     ],
-    link: "https://edison-engineering-portfolio.notion.site/Carbon-Fiber-Layups-Bodywork-Fitting-f8354fe5fb10487dac94129ee6490501"
   }
 ];

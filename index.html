@@ -318,9 +318,6 @@
     .points li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 8px; height: 8px; border: 1.5px solid var(--accent); transform: rotate(45deg); }
     .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
     .tag { display: inline-flex; align-items: center; min-height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); font-size: 0.8rem; color: var(--ink-soft); background: rgba(255,255,255,0.4); }
-    .modal-foot { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line-soft); }
-    .modal-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--muted); text-decoration: none; }
-    .modal-link:hover { color: var(--accent); }
 
     /* ---------- Résumé request popup ---------- */
     .rmodal { position: fixed; inset: 0; z-index: 95; display: none; }
@@ -822,7 +819,6 @@
             "</div>" +
             '<ul class="points">' + p.bullets.map((b) => "<li>" + b + "</li>").join("") + "</ul>" +
             '<div class="tag-row">' + p.tools.map((t) => '<span class="tag">' + t + "</span>").join("") + "</div>" +
-            (p.link ? '<div class="modal-foot"><a class="modal-link" href="' + p.link + '" target="_blank" rel="noreferrer">Full write-up on Notion <span aria-hidden="true">↗</span></a></div>' : "") +
           "</div>";
 
         modal.classList.add("open");
