@@ -7,7 +7,7 @@
 window.FILTER_DEFS = [
   { id: "all", label: "All" },
   { id: "industry", label: "Industry" },
-  { id: "fsae", label: "Penn Electric" },
+  { id: "fsae", label: "Penn Electric Racing" },
   { id: "research", label: "Research" },
   { id: "academic", label: "Coursework" }
 ];
@@ -20,23 +20,23 @@ window.PROJECT_DATA = [
     title: "Haven-2 Solar",
     snippet: "Solar array hardware for Vast's Haven-2 commercial space station.",
     summary:
-      "Currently developing solar array hardware for Vast's Haven-2 commercial space station — the mechanical side of moving power-generation hardware from concept toward flight-credible design.",
+      "Developing solar array hardware for Vast's Haven-2 commercial space station.",
     impact: "Haven-2 power generation",
-    role: "Mechanical design",
+    role: "Responsible Solar Engineer",
     phase: "In progress",
     timeframe: "2026",
     status: "In progress",
     challenge:
-      "Space-station solar hardware has to be light, deployable, and survivable while staying realistic to manufacture and integrate.",
+      "Space-station solar hardware has to be light, deployable, and survivable while staying realistic to manufacture and integrate at scale.",
     move:
       "Focusing on the structural and interface design of the array hardware, keeping the packaging honest about assembly, loads, and integration from the very start.",
     outcome:
-      "Work in progress — building the mechanical foundations for Haven-2's solar power system.",
+      "Work in progress!",
     bullets: [
       "Designing mechanical hardware for the Haven-2 solar array.",
       "Balancing mass, deployment, and survivability against manufacturability."
     ],
-    tools: ["CAD", "Structural design", "Mechanism design", "Spaceflight hardware"],
+    tools: ["Power modeling", "Structural design", "Mechanism design", "Spaceflight hardware"],
     images: [
       "assets/projects/vast-haven-2-solar/Vast_Haven-2_Full_Configuration_V1.jpg",
       "assets/projects/vast-haven-2-solar/01.jpg",
@@ -50,10 +50,10 @@ window.PROJECT_DATA = [
     title: "Starlink Test Hardware",
     snippet: "Vibration, solar-deploy, and pressure-test hardware for Starlink campaigns.",
     summary:
-      "On the Starlink team at SpaceX, I designed and drove fabrication of test hardware across three fronts — vibration fixtures, solar-deploy hardware, and pressure-test setups — built to behave the same on the test floor as they do in CAD.",
+      "On the Starlink team at SpaceX, I designed and drove fabrication of test hardware across three fronts: vibration fixtures, solar-deploy hardware, and pressure-test setups",
     impact: "Lab-credible test hardware",
-    role: "Fixture design + supplier coordination",
-    phase: "Design → fabrication",
+    role: "Responsible Test Engineer",
+    phase: "Completed",
     timeframe: "2025",
     status: "Completed",
     challenge:
@@ -92,7 +92,7 @@ window.PROJECT_DATA = [
     move:
       "I built the drivetrain and electronics around a compact two-wheel-drive chassis, then wrote control logic that converts live sensor data into on-the-fly steering and speed decisions.",
     outcome:
-      "A self-contained robot that perceives its environment and drives the arena autonomously — no remote control involved.",
+      "A self-contained robot that perceives its environment and drives the arena autonomously.",
     bullets: [
       "Built a two-wheel-drive chassis with an onboard microcontroller and motor driver.",
       "Integrated sensors for real-time perception of the course.",
@@ -108,11 +108,11 @@ window.PROJECT_DATA = [
   {
     id: "revx-chassis",
     domain: "fsae",
-    label: "Penn Electric · REVX",
-    title: "REVX Chassis, Jig + Tabs",
-    snippet: "Design-Finals chassis validated in ANSYS and on a torsion rig — plus the jig and tabs that build it.",
+    label: "Penn Electric Racing · REVX",
+    title: "REVX Chassis",
+    snippet: "Design-Finals chassis validated in ANSYS and on a torsion rig.",
     summary:
-      "As part of Penn Electric Racing, I led chassis design for REVX in collaboration with every mechanical sub-team — optimizing for minimum weight, sound torsional stiffness, clean hardpoints, and integration of every component no matter how small. I also led the manufacturing side: a revamped steel chassis jig plus the tabs and tab jigs the team uses to locate every component on the frame.",
+      "As part of Penn Electric Racing, I led chassis design for REVX in collaboration with every mechanical sub-team. Optimized for minimum weight, optimal torsional stiffness, clean hardpoints, and smooth integration of every component. I also led the manufacturing side: a revamped steel chassis jig plus the tabs and tab jigs the team uses to locate every component on the frame.",
     impact: "Reached Design Finals",
     role: "Chassis + manufacturing lead",
     phase: "Design → validate → manufacture",
@@ -146,10 +146,10 @@ window.PROJECT_DATA = [
     domain: "fsae",
     label: "Penn Electric · Packaging",
     title: "PCM Enclosure",
-    snippet: "~50% smaller, IP67-sealed electronics housing with a custom board latch.",
+    snippet: "~50% smaller, IP65-sealed electronics housing with a custom board latch.",
     summary:
-      "Working closely with the electrical sub-team, I designed the enclosure housing Penn Electric Racing's PCM, PDU, and connector boards — roughly 50% smaller than the prior year's, sealed to IP67, and engineered so the boards never move.",
-    impact: "~50% smaller, IP67",
+      "Working closely with the electrical sub-team, I designed the enclosure housing Penn Electric Racing's PCM, PDU, and connector boards to be roughly 50% smaller than the prior year's, sealed to IP65, and engineered so the boards never move.",
+    impact: "~50% smaller, IP65",
     role: "Mechanical design + EE integration",
     phase: "Design for manufacture",
     timeframe: "2024",
@@ -157,16 +157,16 @@ window.PROJECT_DATA = [
     challenge:
       "Shrink the enclosure dramatically while keeping it waterproof for the rain test and absolutely preventing the board movement that had shut the car off mid-corner in past years.",
     move:
-      "I drove the packaging as a system problem — coordinating constantly with EE on board layout, researching sealing for IP67, and designing a custom latch to lock the boards since nothing on the market fit.",
+      "I drove the packaging as a system problem where I was coordinating constantly with EE on board layout, researching sealing for IP65, and designing a custom latch system to lock the boards since nothing on the market fit perfectly.",
     outcome:
-      "A nearly 50% smaller, IP67-rated enclosure with a custom internal latch that kept the boards connected through hard cornering.",
+      "A nearly 50% smaller, IP65-rated enclosure with a custom internal latch that kept the boards connected through hard cornering.",
     bullets: [
       "Cut enclosure volume by nearly 50% versus the prior design.",
-      "Sealed to IP67 for the competition rain test.",
+      "Sealed to IP65 for the competition rain test.",
       "Designed a custom latch to eliminate board movement.",
       "Coordinated layout directly with the electrical team."
     ],
-    tools: ["SOLIDWORKS", "DFM", "IP67 sealing", "EE integration"],
+    tools: ["SOLIDWORKS", "DFM", "IP65 sealing", "EE integration"],
     images: [
       "assets/projects/pcm-enclosure/01.png",
       "assets/projects/pcm-enclosure/02.png",
@@ -177,14 +177,14 @@ window.PROJECT_DATA = [
   {
     id: "tshirt-launcher",
     domain: "academic",
-    label: "Build · Pneumatics",
+    label: "MEAM Lab · Pneumatics",
     title: "Pneumatic T-Shirt Launcher",
-    snippet: "A cart-mounted, multi-barrel pneumatic launcher that fires t-shirts into a crowd — safely and repeatably.",
+    snippet: "A cart-mounted, multi-barrel pneumatic launcher that fires t-shirts into a crowd.",
     summary:
       "A pneumatic t-shirt launcher built on a rolling cart for crowd events. Compressed-air reservoirs feed a multi-barrel launch assembly on an adjustable-angle frame, with electronic firing controls tuned so every shot is safe and repeatable.",
     impact: "Crowd-ready launcher",
     role: "Mechanical design + build",
-    phase: "Design → build",
+    phase: "Completed",
     timeframe: "2024",
     status: "Completed",
     challenge:
@@ -209,9 +209,9 @@ window.PROJECT_DATA = [
     title: "Spiral Zipper Docking Hardware",
     snippet: "Rover mechanism and docking hardware for NASA's lunar terrain research.",
     summary:
-      "At Penn's ModLab (GRASP Lab), I designed and built mechanism hardware for NASA's Lunar Surface Technology Research project — robots that attach to each other to cross hazardous lunar terrain, then separate to continue their own missions.",
+      "At Penn's ModLab (GRASP Lab), I designed and built mechanism hardware for NASA's Lunar Surface Technology Research project. The goal of this project was to allow robots to attach to each other to cross hazardous lunar terrain, then separate to continue their own missions.",
     impact: "Fieldable rover hardware",
-    role: "Research assistant + mechanism design",
+    role: "Mechanism designer",
     phase: "Prototype",
     timeframe: "2024",
     status: "Completed",
@@ -237,20 +237,20 @@ window.PROJECT_DATA = [
   {
     id: "stirling-engine",
     domain: "academic",
-    label: "MEAM 2010 · Craft",
+    label: "MEAM 2010 · CNC Machining",
     title: "Stirling Engine",
-    snippet: "A running Stirling engine made to be genuinely beautiful — and to spin past 1100 RPM.",
+    snippet: "A running Stirling engine made to be a great showpiece, but also run at over 1100 RPM!",
     summary:
-      "For MEAM 2010, a design-and-manufacture course at Penn, I designed and machined a working Stirling engine — and used it as an excuse to make something genuinely beautiful, with a flywheel inspired by aftermarket Toyota Supra wheels.",
+      "For MEAM 2010, a design-and-manufacture course at Penn, I designed and machined a working Stirling engine.",
     impact: "1100+ RPM, finished build",
     role: "Design + manufacture",
-    phase: "Design → machine",
+    phase: "Completed",
     timeframe: "2024",
     status: "Completed",
     challenge:
       "Design and manufacture a running Stirling engine from part drawings and my own specs, holding tight tolerances while making it look refined.",
     move:
-      "I modeled every part in SOLIDWORKS, balanced the assembly via center-of-mass before cutting metal, and chose finishes deliberately — sandblasted flywheel, brushed bedplate, stained wood base.",
+      "I modeled every part in SOLIDWORKS, balanced the assembly via center-of-mass before cutting metal, and chose finishes with visual impact in mind.",
     outcome:
       "A running engine that spun past 1100 RPM, with the considered, finished look I was after.",
     bullets: [
@@ -270,11 +270,11 @@ window.PROJECT_DATA = [
   {
     id: "carbon-fiber",
     domain: "fsae",
-    label: "Penn Electric · Composites",
+    label: "Penn Electric Racing · Composites",
     title: "Carbon Fiber Layups + Bodywork",
     snippet: "Hands-on composites and bodywork fitting, from nose cone to body panels.",
     summary:
-      "Across my time on Penn Electric Racing I learned to do carbon-fiber layups and fit bodywork to the car — from the REVX nose cone to REV9 body panels — the hands-on manufacturing that turns a chassis into a car.",
+      "Across my time on Penn Electric Racing I learned to do carbon-fiber layups and fit bodywork to the car.",
     impact: "Race-car bodywork",
     role: "Composites + bodywork",
     phase: "Manufacture",
@@ -285,7 +285,7 @@ window.PROJECT_DATA = [
     move:
       "I worked through the full layup and finishing process and dialed in panel fitment against the real chassis geometry.",
     outcome:
-      "Carbon parts and bodywork that fit the car and look the part — and a deeper love for making things by hand.",
+      "Carbon parts and bodywork that fit the car and look the part.",
     bullets: [
       "Performed carbon-fiber layups for vehicle parts.",
       "Fit bodywork including the REVX nose cone and REV9 panels.",
